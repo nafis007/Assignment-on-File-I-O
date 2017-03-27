@@ -7,7 +7,7 @@ public class Initializer extends Main
 		initialize(inputFileNumber,threadNumber);
 	}
 	
-    static void cleanDirectories(){
+    void cleanDirectories(){
 		
 		System.out.println("Cleaning Directories");
 		
@@ -27,7 +27,7 @@ public class Initializer extends Main
 			}
 		}
 	}
-	static void initialize(int inputFileNumber, int threadNumber)
+	void initialize(int inputFileNumber, int threadNumber)
 	{
 		numberOfInputFiles = inputFileNumber;
 		numberOfThreads = threadNumber;

@@ -7,18 +7,16 @@ import java.util.Comparator;
 
 public class Reader 
 {
-	
-	ArrayList<String> listOfInputStrings;  //merging string
+	ArrayList<String> inputStringsMerger;  //merger StringList
 	File targetDirectory;
 	File[] listOfInputFiles;
 	
 	Reader(File Directory)
 	{
-		listOfInputStrings = new ArrayList<String>();
+		inputStringsMerger = new ArrayList<String>();
 		targetDirectory=Directory;
 		listOfInputFiles = sortFilesInDirectory(targetDirectory.listFiles()); 
 	}
-	
 	
 	File[] sortFilesInDirectory(File[] files)
 	{
@@ -44,18 +42,14 @@ public class Reader
                 return i;
             }
         });
-
         /*for(File f : files) {
             System.out.println(f.getName());    //debug sorted file list print
-        }*/	
-        
+        }*/	 
         return files;
 	}
 	
-	
 	ArrayList<String> read(int firstFileIndex, int lastFileIndex)
 	{
-		
 		try{
 			for (int index = firstFileIndex; index <= lastFileIndex; index++) 
 			{
@@ -70,7 +64,7 @@ public class Reader
 					while ((inputLine = inputBufferedReader.readLine()) != null)
 					{
 				//		System.out.println(inputLine); //debug
-						listOfInputStrings.add(inputLine);  //merge
+						inputStringsMerger.add(inputLine);  //merge
 						
 					} 
 					inputBufferedReader.close();
@@ -82,12 +76,12 @@ public class Reader
 		{
 			exception.printStackTrace();
 		}
-		return listOfInputStrings;
+		return inputStringsMerger;
 	}
 	public void readerTestPrint()
 	{   
 		System.out.println("Inside reader");
-		for(String line : listOfInputStrings)
+		for(String line : inputStringsMerger)
 		{	
 			System.out.println("Reading lines: "+line);	
 		}

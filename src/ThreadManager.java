@@ -18,7 +18,7 @@ public class ThreadManager extends Main
 		
 	}
 	
-	static void runnableManager()
+	void runnableManager()
 	{
 		int chunksOfFiles=numberOfInputFiles/numberOfThreads;
 		
@@ -65,7 +65,7 @@ public class ThreadManager extends Main
 	}
 	
 	
-	static void threadCreator()
+	void threadCreator()
 	{
 		for(int runnableIndex = 0; runnableIndex < listOfRunnables.size(); runnableIndex++){
 			Thread tempThread=new Thread(listOfRunnables.get(runnableIndex));
@@ -75,7 +75,7 @@ public class ThreadManager extends Main
 	}
 	
 	
-	static void threadStartAndJoin()
+	void threadStartAndJoin()
 	{
 		for(int threadIndex = 0; threadIndex < listOfReadWriteThreads.size(); threadIndex++){
 			
@@ -91,7 +91,7 @@ public class ThreadManager extends Main
 	}
 	
 	
-	static void threadReadWrite()
+	void threadReadWrite()
 	{
 		runnableManager();
 
@@ -100,7 +100,7 @@ public class ThreadManager extends Main
 		threadStartAndJoin();
 	}
 	
-	static void masterReadWrite(File masterInDir, File masterOutDir)
+	void masterReadWrite(File masterInDir, File masterOutDir)
 	{
 		Reader masterReader = new Reader(masterInDir);
 		Writer masterWriter = new Writer(masterOutDir);
