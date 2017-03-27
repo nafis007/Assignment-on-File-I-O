@@ -5,19 +5,26 @@ import java.util.ArrayList;
 
 public class Writer 
 {
-	public void write(File targetDirectory, ArrayList<String> allInputStrings)
+	File targetDirectory;
+	Writer(File Directory)
+	{
+		targetDirectory = Directory;
+	}
+	void write(ArrayList<String> allInputStrings, int threadId)
 	{
 		try
 		{
-			File outputFile = new File(targetDirectory+"\\output.txt");  
+			File outputFile = new File(targetDirectory+"\\output"+threadId+".txt");  
 			FileWriter outputFileWriter = new FileWriter(outputFile);
 			BufferedWriter outputBufferedWriter = new BufferedWriter(outputFileWriter);
 			
-			for(String inputString : allInputStrings)
+
+			for(String line : allInputStrings)
 			{
-				outputBufferedWriter.write(inputString);
+				outputBufferedWriter.write(line);
 				outputBufferedWriter.newLine();
 			}
+
 			outputBufferedWriter.close();
 		} 
 		catch(Exception exception)

@@ -16,9 +16,14 @@ public class RandomInputGenerator
 				
 				int singleStringRandomLength = new Random().nextInt(30)+1;
 				
-				File randomInputFiles = new File(Directory+"\\rand"+i+".txt");  
+				File randomInputFiles = new File(Directory+"\\"+i+".txt");  
 				FileWriter randomInputFileWriter = new FileWriter(randomInputFiles);
 				BufferedWriter randomInputBufferedWriter = new BufferedWriter(randomInputFileWriter);
+				
+				randomInputBufferedWriter.newLine();
+				randomInputBufferedWriter.write("this is input file: "+i);
+				randomInputBufferedWriter.newLine();
+				randomInputBufferedWriter.newLine();
 				
 				for(int j = 0; j < randomLineLength; j++)
 				{
