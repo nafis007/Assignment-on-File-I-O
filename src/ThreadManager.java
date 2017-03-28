@@ -9,7 +9,7 @@ public class ThreadManager extends Main
 	static File OutDir;
 	
 	
-	ThreadManager(int numberOfInputFiles, int numberOfThreads, File InDir, File OutDir)
+	public ThreadManager(int numberOfInputFiles, int numberOfThreads, File InDir, File OutDir)
 	{
 		this.numberOfInputFiles = numberOfInputFiles;
 		this.numberOfThreads = numberOfThreads;

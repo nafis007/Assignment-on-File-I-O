@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class Writer 
 {
 	File targetDirectory;
-	Writer(File Directory)
+	public Writer(File Directory)
 	{
 		targetDirectory = Directory;
 	}

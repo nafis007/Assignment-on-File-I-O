@@ -2,7 +2,7 @@ import java.io.File;
 
 public class Initializer extends Main
 {
-	Initializer(int inputFileNumber, int threadNumber)
+	public Initializer(int inputFileNumber, int threadNumber)
 	{
 		initialize(inputFileNumber,threadNumber);
 	}

@@ -11,7 +11,7 @@ public class Reader
 	File targetDirectory;
 	File[] listOfInputFiles;
 	
-	Reader(File Directory)
+	public Reader(File Directory)
 	{
 		inputStringsMerger = new ArrayList<String>();
 		targetDirectory=Directory;
