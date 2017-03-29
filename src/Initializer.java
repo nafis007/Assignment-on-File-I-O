@@ -4,7 +4,16 @@ public class Initializer extends Main
 {
 	public Initializer(int inputFileNumber, int threadNumber)
 	{
-		initialize(inputFileNumber,threadNumber);
+		numberOfInputFiles = inputFileNumber;
+		numberOfThreads = threadNumber;
+		
+		targetInputDirectory = new File( "D:\\randomInputFolder" );
+		targetOutputDirectory = new File( "D:\\targetOutputFolder" );
+		masterOutputDirectory = new File( "D:\\masterOutputFolder" );
+		
+		cleanDirectories();
+		
+		new RandomInputGenerator(targetInputDirectory,numberOfInputFiles);
 	}
 	
     void cleanDirectories(){
@@ -26,18 +35,5 @@ public class Initializer extends Main
 				file.delete();
 			}
 		}
-	}
-	void initialize(int inputFileNumber, int threadNumber)
-	{
-		numberOfInputFiles = inputFileNumber;
-		numberOfThreads = threadNumber;
-		
-		targetInputDirectory = new File( "D:\\randomInputFolder" );
-		targetOutputDirectory = new File( "D:\\targetOutputFolder" );
-		masterOutputDirectory = new File( "D:\\masterOutputFolder" );
-		
-		cleanDirectories();
-		
-		new RandomInputGenerator(targetInputDirectory,numberOfInputFiles);
 	}
 }

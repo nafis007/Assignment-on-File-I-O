@@ -69,8 +69,7 @@ public class ThreadManager extends Main
 	{
 		for(int runnableIndex = 0; runnableIndex < listOfRunnables.size(); runnableIndex++){
 			Thread tempThread=new Thread(listOfRunnables.get(runnableIndex));
-			listOfReadWriteThreads.add(tempThread);
-			
+			listOfReadWriteThreads.add(tempThread);	
 		}
 	}
 	
